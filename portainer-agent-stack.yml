@@ -36,9 +36,6 @@ networks:
 
 volumes:
   portainer_data:
-    driver: local
-    driver_opts:
-      type: nfs
-      o: addr=127.0.0.1,rw
-      device: ":/mnt/portainer_data"
+    driver: glusterfs
+    name: "gfs/portainer_data"
 
